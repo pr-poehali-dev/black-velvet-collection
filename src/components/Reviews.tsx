@@ -88,7 +88,16 @@ const Reviews = () => {
             ))}
           </div>
 
-          <div className="flex items-center justify-center gap-6 mt-10">
+          <div className="flex flex-col items-center gap-6 mt-10">
+            <a
+              href="#"
+              className="inline-flex items-center gap-2 px-8 py-3 border border-gold text-gold font-montserrat text-sm font-medium tracking-wider hover:bg-gold hover:text-velvet transition-all duration-300 rounded-sm"
+            >
+              Все отзывы
+              <Icon name="ArrowRight" size={15} />
+            </a>
+          </div>
+          <div className="flex items-center justify-center gap-6 mt-6">
             <button
               onClick={prev}
               className="w-10 h-10 border border-gold text-gold rounded-sm flex items-center justify-center hover:bg-gold hover:text-velvet transition-all duration-200"
