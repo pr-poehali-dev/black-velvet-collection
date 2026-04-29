@@ -1,12 +1,27 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Header from '@/components/Header';
+import Hero from '@/components/Hero';
+import Advantages from '@/components/Advantages';
+import ProductGrid from '@/components/ProductGrid';
+import Collections from '@/components/Collections';
+import WhyUs from '@/components/WhyUs';
+import Reviews from '@/components/Reviews';
+import Newsletter from '@/components/Newsletter';
+import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
-      </div>
+    <div className="min-h-screen bg-velvet">
+      <Header />
+      <main style={{ paddingTop: '80px' }}>
+        <Hero />
+        <Advantages />
+        <ProductGrid />
+        <Collections />
+        <WhyUs />
+        <Reviews />
+        <Newsletter />
+      </main>
+      <Footer />
     </div>
   );
 };
