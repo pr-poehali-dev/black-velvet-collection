@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Icon from '@/components/ui/icon';
@@ -128,6 +129,7 @@ const CheckboxItem = ({
 );
 
 const CatalogPage = () => {
+  const navigate = useNavigate();
   const [activePage, setActivePage] = useState(1);
   const [sortBy, setSortBy] = useState('popular');
   const [priceMin, setPriceMin] = useState(0);
@@ -371,7 +373,7 @@ const CatalogPage = () => {
                     style={{ background: '#2F2E30', boxShadow: '0 4px 12px rgba(0,0,0,0.3)' }}
                   >
                     {/* Photo */}
-                    <div className="relative">
+                    <div className="relative" onClick={() => navigate(`/product/${product.id}`)}>
                       <ProductPhoto name={product.name} />
                       {product.badge && (
                         <span
@@ -396,7 +398,10 @@ const CatalogPage = () => {
 
                     {/* Info */}
                     <div className="p-4">
-                      <p className="text-cream font-montserrat font-medium text-sm mb-1 leading-snug line-clamp-2">
+                      <p
+                        className="text-cream font-montserrat font-medium text-sm mb-1 leading-snug line-clamp-2 hover:text-gold transition-colors cursor-pointer"
+                        onClick={() => navigate(`/product/${product.id}`)}
+                      >
                         {product.name}
                       </p>
                       <p className="text-stone font-montserrat text-xs mb-2">Арт. {product.art}</p>
